@@ -1,1326 +1,586 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" data-theme="light" data-lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>محمد أحمد فؤاد - السيرة الذاتية التفاعلية</title>
-    <!-- ====== FONTS & ICONS ====== -->
+    <meta name="description" content="Mohamed Ahmed Fouad - CV for ESC & Jobs">
+    <meta name="author" content="Mohamed Ahmed Fouad">
+    <title>Mohamed Ahmed Fouad | CV</title>
+
+    <!-- استدعاء الخطوط: Cairo للعربية و Inter للإنجليزية -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- استدعاء أيقونات FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
-        /* ============================================================
-               ROOT VARIABLES (LIGHT & DARK)
-               ============================================================ */
+        /* =======================
+           متغيرات الألوان (Variables)
+           ======================= */
         :root {
-            --bg-body: #f0f4fc;
-            --bg-container: rgba(255, 255, 255, 0.85);
-            --text-primary: #0a2647;
-            --text-secondary: #1e2a41;
-            --text-muted: #5c6f8c;
-            --border-color: #e9edf4;
-            --card-bg: rgba(249, 250, 255, 0.9);
-            --card-hover: #f2f6ff;
-            --shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-            --badge-bg: #2c7be5;
-            --badge-text: #ffffff;
-            --btn-bg: #2c7be5;
-            --btn-hover: #1a5fc7;
-            --section-border: #2c7be5;
-            --transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            --glass-bg: rgba(255, 255, 255, 0.3);
-            --glass-border: rgba(255, 255, 255, 0.5);
-            --youtube-red: #ff0000;
-            --github-purple: #6e5494;
-            --whatsapp-green: #25d366;
-            --wechat-green: #07c160;
-            --email-blue: #ea4335;
-            --progress-bg: #e9edf4;
+            /* ألوان الاتحاد الأوروبي الرسمية */
+            --primary: #004494;       /* أزرق داكن */
+            --primary-light: #ebf4ff; 
+            --text-main: #1f2937;
+            --text-light: #6b7280;
+            --bg-body: #f3f4f6;
+            --bg-card: #ffffff;
+            --border: #e5e7eb;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --radius: 16px;
         }
 
+        /* الوضع المظلم (Dark Mode) */
         [data-theme="dark"] {
-            --bg-body: #0b1120;
-            --bg-container: rgba(18, 26, 40, 0.92);
-            --text-primary: #e8edf5;
-            --text-secondary: #cfd8e8;
-            --text-muted: #8899bb;
-            --border-color: #2d3448;
-            --card-bg: rgba(30, 37, 56, 0.9);
-            --card-hover: #2f3852;
-            --shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
-            --badge-bg: #4a8af4;
-            --badge-text: #ffffff;
-            --btn-bg: #4a8af4;
-            --btn-hover: #6aa6ff;
-            --section-border: #4a8af4;
-            --glass-bg: rgba(30, 37, 56, 0.4);
-            --glass-border: rgba(255, 255, 255, 0.1);
-            --progress-bg: #2d3448;
+            --primary: #60a5fa;
+            --primary-light: #1e3a8a;
+            --text-main: #f9fafb;
+            --text-light: #d1d5db;
+            --bg-body: #111827;
+            --bg-card: #1f2937;
+            --border: #374151;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
         }
 
-        /* ====== BASE ====== */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        /* =======================
+           التنسيقات الأساسية (Base)
+           ======================= */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
         body {
             font-family: 'Cairo', sans-serif;
-            background: var(--bg-body);
-            color: var(--text-secondary);
-            padding: 20px;
-            line-height: 1.8;
-            transition: all var(--transition);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            transition: background 0.3s, color 0.3s;
             overflow-x: hidden;
+            padding: 20px;
         }
 
-        /* Animated Background */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 20% 30%, rgba(44, 123, 229, 0.06) 0%, transparent 50%),
-                radial-gradient(circle at 80% 70%, rgba(44, 123, 229, 0.08) 0%, transparent 50%);
-            z-index: -1;
-            animation: bgFloat 20s ease-in-out infinite alternate;
-        }
+        /* تبديل الخط عند تغيير اللغة للإنجليزية */
+        [data-lang="en"] body { font-family: 'Inter', sans-serif; }
 
-        @keyframes bgFloat {
-            0% {
-                transform: scale(1) rotate(0deg);
-            }
-            100% {
-                transform: scale(1.1) rotate(3deg);
-            }
-        }
-
-        /* ====== PROGRESS BAR ====== */
-        #progress-bar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--badge-bg), #6aa6ff);
-            z-index: 9999;
-            width: 0%;
-            transition: width 0.2s ease;
-            box-shadow: 0 0 15px rgba(44, 123, 229, 0.4);
-        }
-
-        /* ====== CONTAINER ====== */
         .container {
-            max-width: 1100px;
-            width: 100%;
-            background: var(--bg-container);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-radius: 32px;
+            max-width: 1000px;
+            margin: 0 auto;
+            background: transparent;
+        }
+
+        /* =======================
+           الهيدر والتحكم (Header)
+           ======================= */
+        header {
+            background: var(--bg-card);
+            padding: 40px;
+            border-radius: var(--radius);
             box-shadow: var(--shadow);
-            padding: 35px;
-            border: 1px solid var(--glass-border);
-            transition: all var(--transition);
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-            margin-top: 20px;
-        }
-
-        .container::after {
-            content: '';
-            position: absolute;
-            top: -30%;
-            right: -20%;
-            width: 60%;
-            height: 60%;
-            background: radial-gradient(circle, rgba(44, 123, 229, 0.04) 0%, transparent 70%);
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        /* ====== HEADER ====== */
-        .header {
             text-align: center;
-            padding-bottom: 25px;
-            border-bottom: 3px solid var(--border-color);
-            transition: border-color var(--transition);
             position: relative;
-            z-index: 1;
+            border-top: 6px solid var(--primary);
+            margin-bottom: 30px;
         }
 
-        .header h1 {
-            font-size: 2.8rem;
-            font-weight: 900;
-            background: linear-gradient(135deg, var(--text-primary) 0%, var(--badge-bg) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            min-height: 70px;
-        }
-
-        #typed-text {
-            display: inline-block;
-            border-left: 3px solid var(--badge-bg);
-            padding-left: 5px;
-            animation: blink 0.8s step-end infinite;
-        }
-
-        @keyframes blink {
-            50% {
-                border-color: transparent;
-            }
-        }
-
-        .header .subtitle {
-            font-size: 1.25rem;
-            color: var(--badge-bg);
-            font-weight: 700;
-            -webkit-text-fill-color: var(--badge-bg);
-            min-height: 35px;
-        }
-
-        .header .contact-info {
-            margin-top: 15px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 12px;
-            font-size: 0.95rem;
-            color: var(--text-muted);
-        }
-
-        .header .contact-info span {
-            background: var(--card-bg);
-            padding: 4px 18px;
-            border-radius: 50px;
-            border: 1px solid var(--border-color);
-            transition: all var(--transition);
-            backdrop-filter: blur(10px);
-        }
-
-        .header .contact-info span:hover {
-            transform: translateY(-2px);
-            border-color: var(--badge-bg);
-            box-shadow: 0 5px 15px rgba(44, 123, 229, 0.15);
-        }
-
-        /* ====== TOP BAR ====== */
-        .top-bar {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            gap: 15px;
-            margin-top: 20px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .social-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-
-        .social-links a {
-            color: var(--text-muted);
-            font-size: 1.5rem;
-            transition: all var(--transition);
-            background: var(--card-bg);
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            border: 1px solid var(--border-color);
-            backdrop-filter: blur(10px);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .social-links a::before {
-            content: '';
+        .controls {
             position: absolute;
-            inset: 0;
-            border-radius: 50%;
-            background: var(--badge-bg);
-            transform: scale(0);
-            transition: transform var(--transition);
-            opacity: 0.1;
-        }
-
-        .social-links a:hover::before {
-            transform: scale(1);
-        }
-
-        .social-links a:hover {
-            transform: translateY(-4px) scale(1.08);
-            border-color: var(--badge-bg);
-            color: var(--badge-bg);
-        }
-
-        .social-links a.github-link:hover {
-            color: var(--github-purple);
-            border-color: var(--github-purple);
-        }
-        .social-links a.youtube-link:hover {
-            color: var(--youtube-red);
-            border-color: var(--youtube-red);
-        }
-        .social-links a.email-link:hover {
-            color: var(--email-blue);
-            border-color: var(--email-blue);
-        }
-
-        .theme-toggle,
-        .lang-switch {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 50px;
-            padding: 8px 20px;
-            font-size: 1rem;
-            color: var(--text-primary);
-            cursor: pointer;
-            transition: all var(--transition);
+            top: 20px;
+            left: 20px; /* لليسار لأن الصفحة RTL */
             display: flex;
-            align-items: center;
-            gap: 8px;
-            backdrop-filter: blur(10px);
-            font-family: 'Cairo', sans-serif;
-        }
-
-        .theme-toggle:hover,
-        .lang-switch:hover {
-            background: var(--badge-bg);
-            color: #fff;
-            border-color: var(--badge-bg);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(44, 123, 229, 0.25);
-        }
-
-        /* ====== SECTIONS ====== */
-        .section {
-            margin-top: 40px;
-            position: relative;
-            z-index: 1;
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .section-title {
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: var(--text-primary);
-            border-right: 6px solid var(--section-border);
-            padding-right: 18px;
-            margin-bottom: 25px;
-            transition: all var(--transition);
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .section-title i {
-            color: var(--badge-bg);
-            animation: iconFloat 3s ease-in-out infinite;
-        }
-
-        @keyframes iconFloat {
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-5px);
-            }
-        }
-
-        .grid-2 {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 25px;
-        }
-
-        @media (max-width: 700px) {
-            .grid-2 {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .card {
-            background: var(--card-bg);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 24px;
-            border: 1px solid var(--border-color);
-            transition: all var(--transition);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .card::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, transparent 50%, rgba(44, 123, 229, 0.02));
-            pointer-events: none;
-        }
-
-        .card:hover {
-            background: var(--card-hover);
-            border-color: var(--badge-bg);
-            transform: translateY(-6px);
-            box-shadow: 0 20px 30px -8px rgba(0, 0, 0, 0.12);
-        }
-
-        .card h3 {
-            color: var(--text-primary);
-            font-size: 1.2rem;
-            margin-bottom: 14px;
-            display: flex;
-            align-items: center;
             gap: 10px;
         }
+        
+        /* ضبط مكان الأزرار في اللغة الإنجليزية */
+        [data-lang="en"] .controls { left: auto; right: 20px; }
 
-        .card ul {
-            list-style: none;
-            padding: 0;
+        .btn-control {
+            background: var(--bg-body);
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s;
+            font-size: 1.1rem;
+        }
+        
+        .btn-control:hover {
+            background: var(--primary);
+            color: #fff;
+            border-color: var(--primary);
+            transform: scale(1.1);
         }
 
-        .card ul li {
-            padding: 8px 0;
-            border-bottom: 1px dashed var(--border-color);
-            font-size: 0.98rem;
-            color: var(--text-secondary);
+        .avatar {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            background: var(--primary-light);
+            margin: 0 auto 20px;
+            border: 4px solid var(--bg-card);
+            box-shadow: var(--shadow);
+            object-fit: cover;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+
+        .contact-item {
             display: flex;
             align-items: center;
             gap: 8px;
-            transition: all 0.3s ease;
+            background: var(--bg-body);
+            padding: 8px 16px;
+            border-radius: 30px;
+            border: 1px solid var(--border);
+            transition: 0.3s;
         }
 
-        .card ul li:hover {
-            padding-right: 8px;
-            color: var(--text-primary);
+        .contact-item:hover {
+            border-color: var(--primary);
+            color: var(--primary);
         }
 
-        .card ul li:last-child {
-            border-bottom: none;
-        }
+        .contact-item i { color: var(--primary); }
 
-        .badge {
-            display: inline-block;
-            background: var(--badge-bg);
-            color: var(--badge-text);
-            font-size: 0.7rem;
-            padding: 2px 14px;
-            border-radius: 50px;
-            font-weight: 700;
-            transition: all var(--transition);
-            letter-spacing: 0.3px;
-        }
-
-        .badge-youtube {
-            background: var(--youtube-red);
-        }
-        .badge-github {
-            background: var(--github-purple);
-        }
-        .badge-military {
-            background: #2d7a3a;
-        }
-
-        /* ====== CERTIFICATES GALLERY ====== */
-        .cert-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            gap: 20px;
-            margin-top: 15px;
-        }
-
-        .cert-item {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 18px;
-            overflow: hidden;
-            cursor: pointer;
-            transition: all var(--transition);
-            text-align: center;
-            padding: 12px;
-            backdrop-filter: blur(10px);
-            position: relative;
-        }
-
-        .cert-item::before {
-            content: '🔍';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(0);
-            font-size: 2.5rem;
-            opacity: 0;
-            transition: all 0.4s ease;
-            z-index: 2;
-            background: rgba(0, 0, 0, 0.5);
-            padding: 15px 20px;
-            border-radius: 50%;
-            color: #fff;
-        }
-
-        .cert-item:hover::before {
-            transform: translate(-50%, -50%) scale(1);
-            opacity: 1;
-        }
-
-        .cert-item:hover {
-            transform: translateY(-6px) scale(1.02);
-            border-color: var(--badge-bg);
-            box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.15);
-        }
-
-        .cert-item img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 12px;
-            background: var(--border-color);
-            transition: transform var(--transition);
-        }
-
-        .cert-item:hover img {
-            transform: scale(1.04);
-        }
-
-        .cert-item p {
-            margin-top: 10px;
-            font-weight: 700;
-            font-size: 0.9rem;
-            color: var(--text-primary);
-        }
-
-        /* ====== LIGHTBOX ====== */
-        .lightbox {
-            display: none;
-            position: fixed;
-            z-index: 9999;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.85);
-            backdrop-filter: blur(16px);
-            align-items: center;
-            justify-content: center;
+        /* =======================
+           الأقسام (Sections)
+           ======================= */
+        .section-card {
+            background: var(--bg-card);
             padding: 30px;
-            animation: fadeIn 0.4s ease;
-        }
-
-        .lightbox.active {
-            display: flex;
+            border-radius: var(--radius);
+            margin-bottom: 25px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            animation: fadeIn 0.6s ease-out;
         }
 
         @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: scale(0.9);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            border-bottom: 2px solid var(--primary-light);
+            padding-bottom: 15px;
+        }
+
+        .icon-box {
+            width: 45px;
+            height: 45px;
+            background: var(--primary);
+            color: #fff;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        h2 { font-size: 1.5rem; color: var(--text-main); }
+
+        /* =======================
+           الشبكة (Grid & Lists)
+           ======================= */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .grid-2 { grid-template-columns: 1fr; }
+            h1 { font-size: 1.8rem; }
+            .contact-info { flex-direction: column; width: 100%; }
+            .contact-item { justify-content: center; }
+        }
+
+        .experience-item {
+            border-right: 3px solid var(--primary-light);
+            padding-right: 20px;
+            margin-bottom: 25px;
+        }
+        
+        [data-lang="en"] .experience-item {
+            border-right: none;
+            border-left: 3px solid var(--primary-light);
+            padding-right: 0;
+            padding-left: 20px;
+        }
+
+        .exp-title { font-weight: 700; color: var(--text-main); font-size: 1.1rem; }
+        .exp-date { font-size: 0.85rem; color: var(--primary); font-weight: 600; margin: 5px 0; display: block; }
+        .exp-desc { color: var(--text-light); font-size: 0.95rem; }
+
+        /* =======================
+           المعرض (Gallery)
+           ======================= */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 15px;
+        }
+
+        .gallery-item {
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: 0.3s;
+            background: var(--bg-body);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+            border-color: var(--primary);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-caption {
+            padding: 10px;
+            text-align: center;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* =======================
+           Lightbox (لعرض الصور الكبيرة)
+           ======================= */
+        .lightbox {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            backdrop-filter: blur(5px);
+        }
+
+        .lightbox.active { display: flex; animation: fadeIn 0.3s; }
 
         .lightbox img {
-            max-width: 92%;
-            max-height: 88vh;
-            border-radius: 20px;
-            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
-            border: 2px solid rgba(255, 255, 255, 0.1);
+            max-width: 90%;
+            max-height: 90vh;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
         }
 
-        .lightbox .close {
+        .close-lightbox {
             position: absolute;
-            top: 25px;
-            right: 35px;
-            font-size: 3.5rem;
+            top: 20px;
+            right: 30px;
             color: #fff;
+            font-size: 3rem;
             cursor: pointer;
-            transition: all 0.25s;
-            width: 60px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.08);
+            transition: 0.3s;
         }
 
-        .lightbox .close:hover {
-            background: rgba(255, 0, 0, 0.3);
-            transform: rotate(90deg);
-        }
+        .close-lightbox:hover { color: var(--primary); transform: rotate(90deg); }
 
-        /* ====== CONTACT BUTTONS ====== */
-        .contact-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
+        /* =======================
+           صندوق الدوافع (Motivation Box)
+           ======================= */
+        .motivation-box {
+            background: linear-gradient(135deg, var(--primary) 0%, #002f6c 100%);
+            color: #fff;
+            padding: 25px;
+            border-radius: 12px;
             margin-top: 20px;
         }
+        
+        .motivation-box h3 { margin-bottom: 15px; font-size: 1.3rem; }
+        .motivation-box ul { padding-right: 20px; }
+        [data-lang="en"] .motivation-box ul { padding-right: 0; padding-left: 20px; }
+        .motivation-box li { margin-bottom: 10px; }
 
-        .btn-contact {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            padding: 14px 30px;
-            border-radius: 60px;
-            font-weight: 700;
-            font-size: 1.05rem;
-            color: #fff;
-            text-decoration: none;
-            transition: all var(--transition);
-            border: none;
-            cursor: pointer;
-            font-family: 'Cairo', sans-serif;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn-contact::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 60%);
-            transform: scale(0);
-            transition: transform 0.6s ease;
-        }
-
-        .btn-contact:hover::after {
-            transform: scale(1);
-        }
-
-        .btn-contact i {
-            font-size: 1.5rem;
-        }
-
-        .btn-contact:hover {
-            transform: translateY(-4px) scale(1.03);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .btn-whatsapp {
-            background: var(--whatsapp-green);
-        }
-        .btn-whatsapp:hover {
-            background: #1da851;
-        }
-        .btn-wechat {
-            background: var(--wechat-green);
-        }
-        .btn-wechat:hover {
-            background: #06a851;
-        }
-        .btn-email {
-            background: var(--email-blue);
-        }
-        .btn-email:hover {
-            background: #c5221f;
-        }
-        .btn-github-big {
-            background: var(--github-purple);
-        }
-        .btn-github-big:hover {
-            background: #5a3d7a;
-        }
-        .btn-youtube-big {
-            background: var(--youtube-red);
-        }
-        .btn-youtube-big:hover {
-            background: #cc0000;
-        }
-
-        /* ====== FOOTER ====== */
-        .footer {
+        /* =======================
+           Footer
+           ======================= */
+        footer {
             text-align: center;
             margin-top: 50px;
-            padding-top: 25px;
-            border-top: 2px solid var(--border-color);
+            color: var(--text-light);
             font-size: 0.9rem;
-            color: var(--text-muted);
-            transition: all var(--transition);
-            position: relative;
-            z-index: 1;
+            padding-bottom: 20px;
         }
 
-        .footer .social-mini a {
-            color: var(--text-muted);
-            margin: 0 12px;
-            font-size: 1.5rem;
-            transition: all var(--transition);
-            display: inline-block;
-        }
-
-        .footer .social-mini a:hover {
-            color: var(--badge-bg);
-            transform: translateY(-4px) scale(1.1);
-        }
-
-        /* ====== RESPONSIVE ====== */
-        @media (max-width: 600px) {
-            .container {
-                padding: 18px;
-                border-radius: 24px;
-            }
-            .header h1 {
-                font-size: 1.9rem;
-            }
-            .cert-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-            .top-bar {
-                flex-direction: column;
-                gap: 10px;
-            }
-            .social-links a {
-                width: 44px;
-                height: 44px;
-                font-size: 1.3rem;
-            }
-            .contact-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            .btn-contact {
-                width: 100%;
-                justify-content: center;
-            }
-        }
-
-        @media (max-width: 400px) {
-            .cert-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* ====== LANGUAGE TOGGLE ====== */
-        .en {
-            display: none;
-        }
-        [data-lang="en"] .ar {
-            display: none;
-        }
-        [data-lang="en"] .en {
-            display: inline;
-        }
-
-        /* ====== SCROLL INDICATOR ====== */
-        .scroll-indicator {
-            text-align: center;
-            margin-top: 20px;
-            color: var(--text-muted);
-            animation: bounce 2s infinite;
-            font-size: 0.9rem;
-        }
-
-        @keyframes bounce {
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-8px);
-            }
-        }
-
-        .scroll-indicator i {
-            display: block;
-            font-size: 1.5rem;
-            margin-top: 5px;
+        /* =======================
+           Print Styles (للطباعة/PDF)
+           ======================= */
+        @media print {
+            body { background: #fff; color: #000; -webkit-print-color-adjust: exact; }
+            .btn-control, .lightbox { display: none !important; }
+            .container { max-width: 100%; margin: 0; padding: 0; }
+            .section-card { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; margin-bottom: 20px; }
+            header { box-shadow: none; border: 1px solid #ccc; }
+            a { text-decoration: none; color: #000; }
         }
     </style>
 </head>
 <body>
 
-    <!-- ====== PROGRESS BAR ====== -->
-    <div id="progress-bar"></div>
-
-    <!-- ====== LIGHTBOX ====== -->
-    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-        <span class="close" onclick="closeLightbox()">&times;</span>
-        <img id="lightbox-img" src="" alt="شهادة" />
-    </div>
-
-    <!-- ====== MAIN CONTAINER ====== -->
-    <div class="container" id="mainContainer">
-
-        <!-- ====== HEADER ====== -->
-        <div class="header">
-            <h1>
-                <span class="ar" id="typed-text">محمد أحمد فؤاد صبري صابر</span>
-                <span class="en" id="typed-text-en">Mohamed Ahmed Fouad Sabry Saber</span>
-            </h1>
-            <div class="subtitle">
-                <span class="ar" id="subtitle-ar">خريج نظم معلومات إدارية | متطوع في فيلق التضامن الأوروبي</span>
-                <span class="en" id="subtitle-en">Information Systems Graduate | ESC Volunteer Candidate</span>
+    <div class="container">
+        
+        <!-- الهيدر الرئيسي -->
+        <header>
+            <!-- أزرار التحكم -->
+            <div class="controls">
+                <button class="btn-control" onclick="toggleTheme()" title="Change Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="btn-control" onclick="toggleLang()" title="Change Language">
+                    <i class="fas fa-globe"></i>
+                </button>
+                <button class="btn-control" onclick="window.print()" title="Download PDF">
+                    <i class="fas fa-file-pdf"></i>
+                </button>
             </div>
+
+            <!-- صورة بروفايل (Placeholder جميل) -->
+            <img src="https://ui-avatars.com/api/?name=Mohamed+Ahmed&background=004494&color=fff&size=256" alt="Profile" class="avatar">
+
+            <h1 class="ar">محمد أحمد فؤاد صبري صابر</h1>
+            <h1 class="en" style="display:none;">Mohamed Ahmed Fouad Sabry Saber</h1>
+
+            <p class="subtitle ar">خريج نظم معلومات | مرشح التضامن الأوروبي (ESC)</p>
+            <p class="subtitle en" style="display:none;">Information Systems Graduate | ESC Candidate</p>
 
             <div class="contact-info">
-                <span>📧 ma7333122@gmail.com</span>
-                <span>📧 joy733312@gmail.com</span>
-                <span>📱 01010421571</span>
-                <span>📱 01515338916</span>
-                <span class="ar">📍 المنصورة، الدقهلية، مصر</span>
-                <span class="en">📍 Mansoura, Dakahlia, Egypt</span>
-                <span>🎂 14/06/2002</span>
-                <span>💬 WeChat: wxid_gkigqbamzrpg22</span>
-                <span class="badge badge-military">🪖 إعفاء نهائي</span>
+                <div class="contact-item"><i class="fas fa-envelope"></i> joy733312@gmail.com</div>
+                <div class="contact-item"><i class="fas fa-phone"></i> +20 101 042 1571</div>
+                <div class="contact-item"><i class="fas fa-map-marker-alt"></i> <span class="ar">المنصورة، مصر</span><span class="en" style="display:none;">Mansoura, Egypt</span></div>
+                <div class="contact-item"><i class="fab fa-weixin"></i> wxid_gkigqbamzrpg22</div>
+            </div>
+        </header>
+
+        <!-- قسم الدوافع (مهم جداً لـ ESC) -->
+        <section class="section-card">
+            <div class="section-header">
+                <div class="icon-box"><i class="fas fa-user-check"></i></div>
+                <h2><span class="ar">عني ولماذا أرغب في التطوع</span><span class="en" style="display:none;">About & Motivation</span></h2>
+            </div>
+            
+            <div class="ar">
+                <p>أنا شاب مصري متحمس ومجتهد، حاصل على بكالوريوس نظم المعلومات. أبحث عن فرصة للتطوع مع <strong>فيلق التضامن الأوروبي</strong> لأنني أؤمن بأهمية التبادل الثقافي وبناء جسور التواصل.</p>
+                <br>
+                <p>أمتلك مزيجاً فريداً من المهارات التقنية (صيانة أجهزة، برمجة أساسية) والعمل اليدوي (قيادة، طبخ، رعاية). أنا مستعد للتكيف مع أي بيئة جديدة، وتعلم لغات جديدة، والمساهمة بفاعلية في المجتمع المضيف.</p>
+            </div>
+            <div class="en" style="display:none;">
+                <p>I am an enthusiastic and hardworking Egyptian graduate with a degree in Information Systems. I am seeking a volunteering opportunity with the <strong>European Solidarity Corps</strong> because I believe in the power of cultural exchange and building bridges.</p>
+                <br>
+                <p>I possess a unique mix of technical skills (hardware repair, basic coding) and manual work (driving, cooking, caregiving). I am ready to adapt to any new environment, learn new languages, and contribute effectively to the host community.</p>
             </div>
 
-            <!-- Top Bar -->
-            <div class="top-bar">
-                <div class="social-links">
-                    <a href="https://www.facebook.com/share/194q88BEbz/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/mohamed_ahmed_fouad224" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="https://youtube.com/@mohamed-techfix" target="_blank" title="YouTube" class="youtube-link"><i class="fab fa-youtube"></i></a>
-                    <a href="https://www.linkedin.com/in/mohamed-ahmed-fouad-839660236" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://github.com/Ma7333122" target="_blank" title="GitHub" class="github-link"><i class="fab fa-github"></i></a>
-                    <a href="mailto:joy733312@gmail.com" target="_blank" title="Email" class="email-link"><i class="fas fa-envelope"></i></a>
-                </div>
-
-                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-                    <i class="fas fa-moon" id="themeIcon"></i>
-                    <span class="ar">الوضع المظلم</span>
-                    <span class="en">Dark Mode</span>
-                </button>
-
-                <button class="lang-switch" id="langToggle" aria-label="Toggle language">
-                    <i class="fas fa-globe"></i>
-                    <span id="langLabel">English</span>
-                </button>
-            </div>
-        </div>
-
-        <!-- ====== ABOUT ====== -->
-        <div class="section" data-delay="0.1">
-            <div class="section-title">
-                <span class="ar">👤 عني</span>
-                <span class="en">👤 About Me</span>
-            </div>
-            <div class="card">
-                <p class="ar" style="font-size: 1.05rem;">
-                    أنا شاب مصري عمري 24 عاماً، حاصل على بكالوريوس نظم المعلومات الإدارية من معهد الدلتا العالي بالمنصورة (مايو 2024) بتقدير مقبول (63.03%)، ومعادل من المجلس الأعلى للجامعات بدرجة بكالوريوس تجارة (نظم معلومات إدارية).
-                    <br><br>
-                    أنا شخص <strong>مجتهد، موثوق، وقابل للتكيف</strong> بسرعة. أمتلك مهارات متنوعة تشمل: إصلاح الكمبيوتر واللابتوب، القيادة، رعاية الأطفال وكبار السن، الطبخ، السباحة، والأعمال الإدارية والمحاسبية. لدي أيضاً معرفة بالبرمجة وتطوير الويب، وأظهرت بعض مشاريعي على <strong>GitHub</strong>.
-                    <br><br>
-                    أنا <strong>مستعد لتعلم أي لغة جديدة</strong> إذا أتيحت لي الفرصة، ومستعد للاستقرار في أي دولة أجد فيها فرصة مجزية ومفيدة. أبحث عن فرصة تطوعية مع <strong>فيلق التضامن الأوروبي</strong> لاكتساب خبرة دولية وبناء مستقبل مستقر.
-                    <br><br>
-                    <span class="badge badge-military">🪖 حاصل على إعفاء نهائي من الخدمة العسكرية</span>
-                </p>
-                <p class="en" style="font-size: 1.05rem;">
-                    I am a 24-year-old Egyptian graduate with a Bachelor's degree in Information Systems Administration from Delta Higher Institute, Mansoura (May 2024) with a grade of 63.03% (Pass). My degree is officially equated to a Bachelor's in Commerce (Information Systems Administration) by the Supreme Council of Egyptian Universities.
-                    <br><br>
-                    I am <strong>hardworking, reliable, and highly adaptable</strong>. I have diverse skills including computer and laptop repair, driving, childcare, elderly care, cooking, swimming, and administrative work. I also have knowledge of programming and web development, showcased through my projects on <strong>GitHub</strong>.
-                    <br><br>
-                    I am <strong>fully ready to learn any new language</strong> if given the opportunity, and I am willing to settle in any country where I find a rewarding opportunity. I am seeking a volunteering opportunity with the <strong>European Solidarity Corps</strong> to gain international experience and build a stable future.
-                    <br><br>
-                    <span class="badge badge-military">🪖 I hold a final military exemption certificate</span>
-                </p>
-            </div>
-        </div>
-
-        <!-- ====== EDUCATION & CERTIFICATES ====== -->
-        <div class="section" data-delay="0.2">
-            <div class="section-title">
-                <span class="ar">🎓 التعليم والشهادات</span>
-                <span class="en">🎓 Education & Certificates</span>
-            </div>
-            <div class="grid-2">
-                <div class="card">
-                    <h3><span class="ar">📘 التعليم الجامعي</span><span class="en">📘 University Education</span></h3>
-                    <ul>
-                        <li><strong class="ar">بكالوريوس نظم المعلومات الإدارية</strong><strong class="en">BSc in Information Systems Administration</strong></li>
-                        <li class="ar">معهد الدلتا العالي للعلوم الإدارية والمحاسبية – المنصورة</li>
-                        <li class="en">Delta Higher Institute for Administrative and Accounting Sciences – Mansoura</li>
-                        <li class="ar">مايو 2024 | التقدير: <span class="badge">مقبول (63.03%)</span></li>
-                        <li class="en">May 2024 | Grade: <span class="badge">Pass (63.03%)</span></li>
-                        <li class="ar">معادل من المجلس الأعلى للجامعات بدرجة بكالوريوس تجارة (نظم معلومات إدارية) – قرار رقم 48 لسنة 2021</li>
-                        <li class="en">Equated to Bachelor's in Commerce (Information Systems) – Supreme Council Decision No. 48, 2021</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h3><span class="ar">📜 الشهادات المهنية</span><span class="en">📜 Professional Certificates</span></h3>
-                    <ul>
-                        <li>✅ ICDL – <span class="ar">دبلوم المهارات المتكاملة للحاسوب</span><span class="en">Integrated Computer Skills Diploma</span></li>
-                        <li>✅ <span class="ar">دورة الحاسب الآلي المتخصصة</span><span class="en">Professional Computer Skills</span> (84 hrs) – Very Good</li>
-                        <li>✅ <span class="ar">دورة اللغة الإنجليزية العامة والمحادثة</span><span class="en">General English & Conversation</span> (48 hrs) – Excellent (89%)</li>
-                        <li>✅ <span class="ar">برنامج اللغة الإنجليزية المتكامل</span><span class="en">Integrated English Program</span> – 94%</li>
-                        <li>✅ <span class="ar">برنامج الموارد البشرية الاحترافي</span><span class="en">Human Resources Professional Program</span></li>
-                        <li>✅ <span class="ar">تطوير الويب والتسويق الإلكتروني</span><span class="en">Web Development & E-Marketing</span> – Delta University Award (2023)</li>
-                        <li>✅ PLC – <span class="ar">وحدات التحكم المنطقية القابلة للبرمجة</span><span class="en">Programmable Logic Controller</span></li>
-                        <li>✅ <span class="ar">شهادة الإعفاء النهائي من الخدمة العسكرية</span><span class="en">Final Military Exemption Certificate</span> <span class="badge badge-military">🪖</span></li>
-                        <li>✅ <span class="ar">رخصة القيادة</span><span class="en">Driving License</span> 🚗</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- ====== EXPERIENCE ====== -->
-        <div class="section" data-delay="0.3">
-            <div class="section-title">
-                <span class="ar">💼 خبراتي العملية</span>
-                <span class="en">💼 Work Experience</span>
-            </div>
-            <div class="grid-2">
-                <div class="card">
-                    <h3><span class="ar">📊 إدارة ومالية</span><span class="en">📊 Admin & Finance</span></h3>
-                    <ul>
-                        <li class="ar">مراجع حسابات وتحويلات بنكية</li>
-                        <li class="en">Accounts Reviewer & Banking Transfers</li>
-                        <li class="ar">أخصائي إدخال بيانات</li>
-                        <li class="en">Data Entry Specialist</li>
-                        <li class="ar">أمين صندوق (محلات ذهب وأدوات منزلية)</li>
-                        <li class="en">Cashier (Gold & Household shops)</li>
-                        <li class="ar">مساعد تشغيل وتنسيق مهام</li>
-                        <li class="en">Operations Assistant</li>
-                    </ul>
-                    <br>
-                    <h3><span class="ar">🔧 تقني وصناعي</span><span class="en">🔧 Technical & Industrial</span></h3>
-                    <ul>
-                        <li><span class="ar">فني صيانة كمبيوتر ولابتوب</span><span class="en">Computer & Laptop Repair Technician</span> <span class="badge badge-youtube">🎥 YouTube</span></li>
-                        <li><span class="ar">فني أجهزة كهربائية بسيطة</span><span class="en">Basic Electrical Appliances Repair</span></li>
-                        <li><span class="ar">مشغل آلات في مصنع بلاستيك</span><span class="en">Machine Operator – Plastic Factory</span></li>
-                        <li><span class="ar">تركيب غرف نوم وأثاث</span><span class="en">Furniture Assembly & Installation</span></li>
-                        <li><span class="ar">مساعد حداد وكهربائي</span><span class="en">Assistant Blacksmith & Electrician</span></li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h3><span class="ar">🚗 قيادة ولوجستيات</span><span class="en">🚗 Driving & Logistics</span></h3>
-                    <ul>
-                        <li><span class="ar">سائق سيارة ربع نقل</span><span class="en">Light Truck Driver</span></li>
-                        <li><span class="ar">توصيل طلبات</span><span class="en">Delivery Services</span></li>
-                        <li><span class="ar">رخصة قيادة خاصة</span><span class="en">Private Driving License</span> 🚗</li>
-                    </ul>
-                    <br>
-                    <h3><span class="ar">👨‍👩‍👧‍👦 رعاية واجتماعي</span><span class="en">👨‍👩‍👧‍👦 Care & Social</span></h3>
-                    <ul>
-                        <li><span class="ar">رعاية كبار السن</span><span class="en">Elderly Care</span></li>
-                        <li><span class="ar">رعاية وتعليم الأطفال واللعب معهم</span><span class="en">Childcare, Teaching & Playing with Children</span></li>
-                        <li><span class="ar">تربية أطفال</span><span class="en">Child Rearing</span></li>
-                    </ul>
-                    <br>
-                    <h3><span class="ar">🍳 مهارات حياتية</span><span class="en">🍳 Life Skills</span></h3>
-                    <ul>
-                        <li><span class="ar">الطبخ والتنظيف والغسيل</span><span class="en">Cooking, Cleaning, Laundry</span></li>
-                        <li><span class="ar">النظافة الشخصية</span><span class="en">Personal Grooming</span></li>
-                        <li><span class="ar">السباحة وألعاب الجيم</span><span class="en">Swimming & Gym</span></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- ====== GITHUB & YOUTUBE ====== -->
-        <div class="section" data-delay="0.4">
-            <div class="section-title">
-                <span class="ar">💻 مشاريعي التقنية</span>
-                <span class="en">💻 My Tech Projects</span>
-            </div>
-            <div class="grid-2">
-                <div class="card text-center">
-                    <i class="fab fa-github" style="font-size: 3rem; color: var(--github-purple);"></i>
-                    <h3>GitHub</h3>
-                    <p class="ar">أعمالي في تطوير الويب: موقع لإنشاء السيرة الذاتية، موقع لإدارة المبيعات، ومشاريع أخرى.</p>
-                    <p class="en">My web development work: CV creator, sales management site, and more.</p>
-                    <a href="https://github.com/Ma7333122" target="_blank" class="btn-contact btn-github-big" style="display: inline-flex; margin-top: 12px;">
-                        <i class="fab fa-github"></i> <span class="ar">زيارة حسابي</span><span class="en">Visit My Profile</span>
-                    </a>
-                </div>
-                <div class="card text-center">
-                    <i class="fab fa-youtube" style="font-size: 3rem; color: var(--youtube-red);"></i>
-                    <h3>YouTube</h3>
-                    <p class="ar">قناة متخصصة في إصلاح الكمبيوتر واللابتوب والأجهزة الإلكترونية.</p>
-                    <p class="en">Channel dedicated to computer, laptop, and electronics repair.</p>
-                    <a href="https://youtube.com/@mohamed-techfix" target="_blank" class="btn-contact btn-youtube-big" style="display: inline-flex; margin-top: 12px;">
-                        <i class="fab fa-youtube"></i> <span class="ar">زيارة القناة</span><span class="en">Visit Channel</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- ====== LANGUAGES ====== -->
-        <div class="section" data-delay="0.5">
-            <div class="section-title">
-                <span class="ar">🗣️ اللغات</span>
-                <span class="en">🗣️ Languages</span>
-            </div>
-            <div class="card">
+            <div class="motivation-box">
+                <h3><i class="fas fa-check-circle"></i> <span class="ar">لماذا أنا مناسب؟</span><span class="en" style="display:none;">Why am I suitable?</span></h3>
                 <ul>
-                    <li><strong class="ar">العربية</strong><strong class="en">Arabic</strong> – <span class="ar">اللغة الأم</span><span class="en">Native</span></li>
-                    <li><strong class="ar">الإنجليزية</strong><strong class="en">English</strong> – <span class="ar">مستوى A2 / أساسي (أفهم التعليمات البسيطة، وأتعلم بسرعة)</span><span class="en">A2 / Basic (understand simple instructions, fast learner)</span></li>
-                    <li><strong class="ar">استعداد لتعلم أي لغة جديدة</strong><strong class="en">Ready to learn any new language</strong> – ✅</li>
+                    <li><span class="ar">🚀 إعفاء عسكري نهائي (متاح للسفر فوراً).</span><span class="en" style="display:none;">🚀 Final Military Exemption (Available immediately).</span></li>
+                    <li><span class="ar">💻 مهارات تقنية قوية (صيانة كمبيوتر، ICDL).</span><span class="en" style="display:none;">💻 Strong Technical Skills (PC Repair, ICDL).</span></li>
+                    <li><span class="ar">👨‍🍳 مهارات حياتية عملية (طبخ، قيادة، تنظيف).</span><span class="en" style="display:none;">👨‍🍳 Practical Life Skills (Cooking, Driving, Cleaning).</span></li>
+                    <li><span class="ar">🤝 شغوف بالعمل التطوعي وتعلم الثقافات الجديدة.</span><span class="en" style="display:none;">🤝 Passionate about volunteering and learning new cultures.</span></li>
                 </ul>
             </div>
-        </div>
+        </section>
 
-        <!-- ====== CERTIFICATES GALLERY ====== -->
-        <div class="section" data-delay="0.6">
-            <div class="section-title">
-                <span class="ar">🖼️ معرض الشهادات</span>
-                <span class="en">🖼️ Certificates Gallery</span>
+        <!-- التعليم والخبرات -->
+        <section class="section-card">
+            <div class="section-header">
+                <div class="icon-box"><i class="fas fa-graduation-cap"></i></div>
+                <h2><span class="ar">التعليم والمهارات</span><span class="en" style="display:none;">Education & Skills</span></h2>
             </div>
-            <p class="ar" style="color: var(--text-muted); margin-bottom: 12px;">اضغط على أي صورة لتكبيرها.</p>
-            <p class="en" style="color: var(--text-muted); margin-bottom: 12px;">Click any image to enlarge.</p>
-            <div class="cert-grid" id="certGallery">
-                <!-- سيتم ملء الصور بواسطة JavaScript -->
-            </div>
-        </div>
 
-        <!-- ====== WHY ESC ====== -->
-        <div class="section" data-delay="0.7">
-            <div class="section-title">
-                <span class="ar">🤝 لماذا أريد التطوع مع فيلق التضامن الأوروبي؟</span>
-                <span class="en">🤝 Why I Want to Volunteer with the ESC</span>
-            </div>
-            <div class="card">
-                <p class="ar" style="font-size: 1.05rem;">
-                    أريد التطوع مع فيلق التضامن الأوروبي لاكتساب خبرة دولية، وتطوير مهاراتي، وبناء مستقبل أفضل لنفسي.
-                    لدي العديد من المهارات العملية مثل إصلاح الكمبيوتر، القيادة، رعاية الأطفال وكبار السن، الطبخ، والسباحة.
-                    أريد استخدام هذه المهارات لمساعدة المجتمعات المحتاجة بينما أتعلم أشياء جديدة.
-                    <br><br>
-                    هذه فرصة آمنة وقانونية لي للنمو، وتحسين لغتي الإنجليزية، والمساهمة في مشاريع هادفة في أوروبا.
-                    أنا <strong>مستعد لتعلم أي لغة جديدة</strong> ومستعد للاستقرار في أي دولة أجد فيها فرصة مجزية.
-                </p>
-                <p class="en" style="font-size: 1.05rem;">
-                    I want to volunteer with the European Solidarity Corps to gain international experience, develop my skills, and build a better future for myself.
-                    I have many practical skills including computer repair, driving, childcare, elderly care, cooking, and swimming.
-                    I want to use these skills to help communities in need while learning new things.
-                    <br><br>
-                    This is a safe, legal opportunity for me to grow, improve my English, and contribute to meaningful projects in Europe.
-                    I am <strong>fully ready to learn any new language</strong> and willing to settle in any country where I find a rewarding opportunity.
-                </p>
-            </div>
-        </div>
+            <div class="grid-2">
+                <div>
+                    <div class="experience-item">
+                        <div class="exp-title ar">بكالوريوس نظم المعلومات الإدارية</div>
+                        <div class="exp-title en" style="display:none;">BSc Information Systems</div>
+                        <span class="exp-date">2024 | Delta Institute</span>
+                        <p class="exp-desc ar">معادل من المجلس الأعلى للجامعات. تقدير مقبول.</p>
+                        <p class="exp-desc en" style="display:none;">Equated by Supreme Council. Grade: Pass.</p>
+                    </div>
 
-        <!-- ====== CONTACT BUTTONS ====== -->
-        <div class="section" data-delay="0.8">
-            <div class="section-title">
-                <span class="ar">📞 تواصل معي مباشرة</span>
-                <span class="en">📞 Contact Me Directly</span>
-            </div>
-            <div class="contact-buttons">
-                <a href="https://wa.me/201010421571?text=مرحباً%20محمد،%20اطلعت%20على%20سيرتك%20الذاتية%20وأرغب%20في%20التواصل%20معك" target="_blank" class="btn-contact btn-whatsapp">
-                    <i class="fab fa-whatsapp"></i> WhatsApp
-                </a>
-                <a href="https://wa.me/201515338916?text=مرحباً%20محمد،%20اطلعت%20على%20سيرتك%20الذاتية%20وأرغب%20في%20التواصل%20معك" target="_blank" class="btn-contact btn-whatsapp">
-                    <i class="fab fa-whatsapp"></i> WhatsApp (2)
-                </a>
-                <a href="mailto:joy733312@gmail.com?subject=تواصل%20بخصوص%20فرصة%20تطوعية&body=مرحباً%20محمد،%20اطلعت%20على%20سيرتك%20الذاتية%20وأرغب%20في%20التواصل%20معك" class="btn-contact btn-email">
-                    <i class="fas fa-envelope"></i> joy733312@gmail.com
-                </a>
-                <a href="#" class="btn-contact btn-wechat" onclick="alert('يرجى إضافة معرف WeChat: wxid_gkigqbamzrpg22 في التطبيق')">
-                    <i class="fab fa-weixin"></i> WeChat
-                </a>
-            </div>
-            <p style="text-align: center; margin-top: 12px; color: var(--text-muted);">
-                <span class="ar">📧 joy733312@gmail.com | 📱 01010421571 | 01515338916</span>
-                <span class="en">📧 joy733312@gmail.com | 📱 01010421571 | 01515338916</span>
-                <br>
-                💬 WeChat ID: wxid_gkigqbamzrpg22
-            </p>
-        </div>
+                    <div class="experience-item">
+                        <div class="exp-title ar">رخصة القيادة</div>
+                        <div class="exp-title en" style="display:none;">Driving License</div>
+                        <span class="exp-date">Private License</span>
+                    </div>
+                </div>
 
-        <!-- ====== FOOTER ====== -->
-        <div class="footer">
-            <p>
-                📧 ma7333122@gmail.com | 📧 joy733312@gmail.com |
-                📱 01010421571 | 📱 01515338916 |
-                💬 WeChat: wxid_gkigqbamzrpg22
-            </p>
-            <div class="social-mini">
-                <a href="https://www.facebook.com/share/194q88BEbz/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://www.instagram.com/mohamed_ahmed_fouad224" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://youtube.com/@mohamed-techfix" target="_blank"><i class="fab fa-youtube"></i></a>
-                <a href="https://www.linkedin.com/in/mohamed-ahmed-fouad-839660236" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://github.com/Ma7333122" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="mailto:joy733312@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+                <div>
+                    <h3 style="margin-bottom:15px; color:var(--primary);"><span class="ar">المهارات التقنية</span><span class="en" style="display:none;">Technical Skills</span></h3>
+                    <ul style="list-style:none; padding:0;">
+                        <li style="margin-bottom:8px;">✅ <span class="ar">صيانة الكمبيوتر واللابتوب</span><span class="en" style="display:none;">PC & Laptop Repair</span></li>
+                        <li style="margin-bottom:8px;">✅ <span class="ar">Microsoft Office (Word, Excel)</span></li>
+                        <li style="margin-bottom:8px;">✅ <span class="ar">ICDL Certificate</span></li>
+                        <li style="margin-bottom:8px;">✅ <span class="ar">Web Development (HTML/CSS)</span></li>
+                    </ul>
+                    
+                    <h3 style="margin:20px 0 15px; color:var(--primary);"><span class="ar">اللغات</span><span class="en" style="display:none;">Languages</span></h3>
+                    <ul style="list-style:none; padding:0;">
+                        <li style="margin-bottom:8px;">🇪🇬 <span class="ar">العربية (لغة الأم)</span><span class="en" style="display:none;">Arabic (Native)</span></li>
+                        <li style="margin-bottom:8px;">🇬🇧 <span class="ar">الإنجليزية (A2 - وتتحسن)</span><span class="en" style="display:none;">English (A2 - Improving)</span></li>
+                    </ul>
+                </div>
             </div>
-            <p style="font-size: 0.8rem; margin-top: 12px;">
-                © 2026 <span class="ar">محمد أحمد فؤاد – جميع الحقوق محفوظة</span>
-                <span class="en">Mohamed Ahmed Fouad – All Rights Reserved</span>
-            </p>
-        </div>
+        </section>
+
+        <!-- معرض الشهادات -->
+        <section class="section-card">
+            <div class="section-header">
+                <div class="icon-box"><i class="fas fa-images"></i></div>
+                <h2><span class="ar">معرض الشهادات</span><span class="en" style="display:none;">Certificates Gallery</span></h2>
+            </div>
+            
+            <p class="ar" style="margin-bottom:15px; color:var(--text-light);">اضغط على الصورة للتكبير</p>
+            <p class="en" style="display:none; margin-bottom:15px; color:var(--text-light);">Click image to enlarge</p>
+
+            <div class="gallery-grid" id="certGallery">
+                <!-- سيتم تعبئة الصور هنا بواسطة JavaScript -->
+            </div>
+        </section>
+
+        <!-- روابط التواصل -->
+        <section class="section-card" style="text-align: center;">
+            <div class="section-header" style="justify-content: center; border:none; margin-bottom:10px;">
+                <h2><span class="ar">تواصل معي</span><span class="en" style="display:none;">Contact Me</span></h2>
+            </div>
+            <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                <a href="https://github.com/Ma7333122" target="_blank" style="color:var(--text-main); font-size:2rem; transition:0.3s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-main)'"><i class="fab fa-github"></i></a>
+                <a href="https://youtube.com/@mohamed-techfix" target="_blank" style="color:var(--text-main); font-size:2rem; transition:0.3s;" onmouseover="this.style.color='red'" onmouseout="this.style.color='var(--text-main)'"><i class="fab fa-youtube"></i></a>
+                <a href="https://wa.me/201010421571" target="_blank" style="color:var(--text-main); font-size:2rem; transition:0.3s;" onmouseover="this.style.color='green'" onmouseout="this.style.color='var(--text-main)'"><i class="fab fa-whatsapp"></i></a>
+                <a href="mailto:joy733312@gmail.com" style="color:var(--text-main); font-size:2rem; transition:0.3s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-main)'"><i class="fas fa-envelope"></i></a>
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2024 <span class="ar">محمد أحمد فؤاد</span><span class="en" style="display:none;">Mohamed Ahmed Fouad</span> | <span class="ar">جميع الحقوق محفوظة</span><span class="en" style="display:none;">All Rights Reserved</span></p>
+        </footer>
 
     </div>
 
-    <!-- ============================================================
-    JAVASCRIPT
-    ============================================================ -->
-    <script>
-        // ============================================================
-        // 1. CERTIFICATES DATA (USING DIRECT IMAGE LINKS)
-        //    These are the direct image URLs from FreeImage.
-        //    If an image doesn't appear, replace the URL with the
-        //    direct link (ending in .jpg, .png, etc.)
-        // ============================================================
-        const certificates = [{
-            name: 'شهادة الإعفاء من الجيش',
-            nameEn: 'Military Exemption',
-            img: 'https://i.ibb.co/Hd7r0gL/Cx-RLLWg.jpg'
-        }, {
-            name: 'رخصة القيادة',
-            nameEn: 'Driving License',
-            img: 'https://i.ibb.co/3MLQhGg/Cx-RZE8l.jpg'
-        }, {
-            name: 'شهادة مجال الويب',
-            nameEn: 'Web Development',
-            img: 'https://i.ibb.co/4TbqD6X/Cx-RD8h-P.jpg'
-        }, {
-            name: 'كورس الأوفيس (Microsoft Office)',
-            nameEn: 'Microsoft Office Course',
-            img: 'https://i.ibb.co/8mLpVHh/Cx-Rb-PV9.jpg'
-        }, {
-            name: 'القواعد واللغة الإنجليزية',
-            nameEn: 'English Grammar',
-            img: 'https://i.ibb.co/KsVH7w6/Cx-Rpi-Yb.jpg'
-        }, {
-            name: 'شهادة PLC',
-            nameEn: 'PLC Certificate',
-            img: 'https://i.ibb.co/f17mD3W/Cx-Ryrtp.jpg'
-        }, {
-            name: 'شهادة ICDL',
-            nameEn: 'ICDL Certificate',
-            img: 'https://i.ibb.co/nzrM7hX/Cx5-H9k-J.jpg'
-        }, {
-            name: 'البرنامج المتكامل للغة الإنجليزية',
-            nameEn: 'Integrated English Program',
-            img: 'https://i.ibb.co/fnwhYbY/Cx5-Hsvs.jpg'
-        }, {
-            name: 'شهادة المهارات البشرية',
-            nameEn: 'Human Skills',
-            img: 'https://i.ibb.co/0cVjHf0/Cx5-Jm-OJ.jpg'
-        }, {
-            name: 'شهادة التخرج (البكالوريوس)',
-            nameEn: 'Bachelor Degree',
-            img: 'https://i.ibb.co/yVH8jtg/Cx5d-QLl.jpg'
-        }];
+    <!-- Lightbox Element -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="close-lightbox">&times;</span>
+        <img id="lightbox-img" src="" alt="Certificate">
+    </div>
 
-        // ============================================================
-        // 2. RENDER CERTIFICATES
-        // ============================================================
+    <script>
+        // 1. قائمة الشهادات (الروابط المباشرة المضمونة)
+        const certificates = [
+            { name: 'Military Exemption', img: 'https://iili.io/CxRLLWg.jpg' },
+            { name: 'Driving License', img: 'https://iili.io/CxRZE8l.jpg' },
+            { name: 'Web Development', img: 'https://iili.io/CxRD8hP.jpg' },
+            { name: 'Office Course', img: 'https://iili.io/CxRbPV9.jpg' },
+            { name: 'English Grammar', img: 'https://iili.io/CxRpiYb.jpg' },
+            { name: 'PLC Certificate', img: 'https://iili.io/CxRyrtp.jpg' },
+            { name: 'ICDL', img: 'https://iili.io/Cx5H9kJ.jpg' },
+            { name: 'Integrated English', img: 'https://iili.io/Cx5Hsvs.jpg' },
+            { name: 'Human Skills', img: 'https://iili.io/Cx5JmOJ.jpg' },
+            { name: 'Graduation Certificate', img: 'https://iili.io/Cx5dQLl.jpg' }
+        ];
+
+        // 2. دالة لعرض الشهادات في الصفحة
         const gallery = document.getElementById('certGallery');
         certificates.forEach(cert => {
-            const div = document.createElement('div');
-            div.className = 'cert-item';
-            div.setAttribute('onclick', `openLightbox('${cert.img}')`);
-            div.innerHTML = `
-                    <img src="${cert.img}" alt="${cert.name}" loading="lazy" onerror="this.src='https://via.placeholder.com/400x300/2c7be5/ffffff?text=صورة+غير+متاحة'" />
-                    <p><span class="ar">${cert.name}</span><span class="en">${cert.nameEn}</span></p>
-                `;
-            gallery.appendChild(div);
+            const item = document.createElement('div');
+            item.className = 'gallery-item';
+            item.onclick = () => openLightbox(cert.img);
+            
+            // استخدام English name بشكل افتراضي للتنظيم
+            item.innerHTML = `
+                <img src="${cert.img}" loading="lazy" alt="${cert.name}" onerror="this.src='https://via.placeholder.com/300?text=Loading...'">
+                <div class="gallery-caption">${cert.name}</div>
+            `;
+            gallery.appendChild(item);
         });
 
-        // ============================================================
-        // 3. LIGHTBOX FUNCTIONS
-        // ============================================================
-        function openLightbox(imgSrc) {
+        // 3. دوال Lightbox (تكبير الصورة)
+        function openLightbox(src) {
             const lightbox = document.getElementById('lightbox');
             const img = document.getElementById('lightbox-img');
-            img.src = imgSrc;
+            img.src = src;
             lightbox.classList.add('active');
-            document.body.style.overflow = 'hidden';
         }
 
         function closeLightbox() {
             document.getElementById('lightbox').classList.remove('active');
-            document.body.style.overflow = 'auto';
         }
 
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') closeLightbox();
-        });
+        // 4. دالة تغيير اللغة (Toggle Language)
+        function toggleLang() {
+            const html = document.documentElement;
+            const currentLang = html.getAttribute('data-lang');
+            const nextLang = currentLang === 'ar' ? 'en' : 'ar';
+            
+            // تحديث الـ attributes
+            html.setAttribute('data-lang', nextLang);
+            html.setAttribute('dir', nextLang === 'ar' ? 'rtl' : 'ltr');
 
-        // ============================================================
-        // 4. THEME TOGGLE
-        // ============================================================
-        const themeToggle = document.getElementById('themeToggle');
-        const themeIcon = document.getElementById('themeIcon');
-        let currentTheme = localStorage.getItem('theme') || 'light';
-
-        function setTheme(theme) {
-            document.documentElement.setAttribute('data-theme', theme);
-            localStorage.setItem('theme', theme);
-            const isDark = theme === 'dark';
-            themeIcon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
-            themeToggle.querySelector('.ar').textContent = isDark ? 'الوضع الفاتح' : 'الوضع المظلم';
-            themeToggle.querySelector('.en').textContent = isDark ? 'Light Mode' : 'Dark Mode';
-        }
-
-        themeToggle.addEventListener('click', () => {
-            const nextTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-            setTheme(nextTheme);
-        });
-        setTheme(currentTheme);
-
-        // ============================================================
-        // 5. LANGUAGE TOGGLE
-        // ============================================================
-        const langToggle = document.getElementById('langToggle');
-        const langLabel = document.getElementById('langLabel');
-        let currentLang = localStorage.getItem('lang') || 'ar';
-
-        function setLanguage(lang) {
-            document.documentElement.setAttribute('data-lang', lang);
-            localStorage.setItem('lang', lang);
-            langLabel.textContent = lang === 'ar' ? 'English' : 'العربية';
-        }
-
-        langToggle.addEventListener('click', () => {
-            const nextLang = document.documentElement.getAttribute('data-lang') === 'ar' ? 'en' : 'ar';
-            setLanguage(nextLang);
-        });
-        setLanguage(currentLang);
-
-        // ============================================================
-        // 6. SCROLL ANIMATIONS (Intersection Observer)
-        // ============================================================
-        const sections = document.querySelectorAll('.section');
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const delay = parseFloat(entry.target.getAttribute('data-delay')) || 0;
-                    setTimeout(() => {
-                        entry.target.classList.add('visible');
-                    }, delay * 1000);
+            // إظهار وإخفاء العناصر حسب الفئة
+            document.querySelectorAll('.ar').forEach(el => {
+                if (el.tagName === 'P' || el.tagName === 'DIV' || el.tagName === 'H1' || el.tagName === 'H2' || el.tagName === 'SPAN') {
+                    el.style.display = (nextLang === 'ar') ? (el.tagName === 'SPAN' && el.parentElement.tagName !== 'P' ? 'inline' : 'block') : 'none';
+                } else {
+                    el.style.display = (nextLang === 'ar') ? 'inline' : 'none';
                 }
             });
-        }, {
-            threshold: 0.15,
-            rootMargin: '0px 0px -50px 0px'
-        });
 
-        sections.forEach(section => {
-            observer.observe(section);
-        });
-
-        // ============================================================
-        // 7. PROGRESS BAR
-        // ============================================================
-        const progressBar = document.getElementById('progress-bar');
-
-        window.addEventListener('scroll', () => {
-            const scrollTop = window.scrollY;
-            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-            const progress = (scrollTop / docHeight) * 100;
-            progressBar.style.width = progress + '%';
-        });
-
-        // ============================================================
-        // 8. TYPING EFFECT
-        // ============================================================
-        const typedTextAr = document.getElementById('typed-text');
-        const typedTextEn = document.getElementById('typed-text-en');
-        const subtitleAr = document.getElementById('subtitle-ar');
-        const subtitleEn = document.getElementById('subtitle-en');
-
-        const fullNameAr = 'محمد أحمد فؤاد صبري صابر';
-        const fullNameEn = 'Mohamed Ahmed Fouad Sabry Saber';
-        const subAr = 'خريج نظم معلومات إدارية | متطوع في فيلق التضامن الأوروبي';
-        const subEn = 'Information Systems Graduate | ESC Volunteer Candidate';
-
-        let indexAr = 0,
-            indexEn = 0;
-        let isDeleting = false;
-
-        function typeEffect() {
-            const currentLang = document.documentElement.getAttribute('data-lang') || 'ar';
-
-            if (currentLang === 'ar') {
-                if (!isDeleting && indexAr <= fullNameAr.length) {
-                    typedTextAr.textContent = fullNameAr.substring(0, indexAr);
-                    indexAr++;
-                    setTimeout(typeEffect, 60);
-                } else if (isDeleting && indexAr > 0) {
-                    typedTextAr.textContent = fullNameAr.substring(0, indexAr);
-                    indexAr--;
-                    setTimeout(typeEffect, 30);
-                } else if (indexAr > fullNameAr.length) {
-                    isDeleting = true;
-                    setTimeout(typeEffect, 2000);
+            document.querySelectorAll('.en').forEach(el => {
+                if (el.tagName === 'P' || el.tagName === 'DIV' || el.tagName === 'H1' || el.tagName === 'H2' || el.tagName === 'SPAN') {
+                    el.style.display = (nextLang === 'en') ? (el.tagName === 'SPAN' && el.parentElement.tagName !== 'P' ? 'inline' : 'block') : 'none';
                 } else {
-                    isDeleting = false;
-                    indexAr = 0;
-                    setTimeout(typeEffect, 1000);
+                    el.style.display = (nextLang === 'en') ? 'inline' : 'none';
                 }
-            } else {
-                if (!isDeleting && indexEn <= fullNameEn.length) {
-                    typedTextEn.textContent = fullNameEn.substring(0, indexEn);
-                    indexEn++;
-                    setTimeout(typeEffect, 60);
-                } else if (isDeleting && indexEn > 0) {
-                    typedTextEn.textContent = fullNameEn.substring(0, indexEn);
-                    indexEn--;
-                    setTimeout(typeEffect, 30);
-                } else if (indexEn > fullNameEn.length) {
-                    isDeleting = true;
-                    setTimeout(typeEffect, 2000);
-                } else {
-                    isDeleting = false;
-                    indexEn = 0;
-                    setTimeout(typeEffect, 1000);
-                }
-            }
+            });
+            
+            // تحديث عنوان الصفحة
+            document.title = nextLang === 'ar' ? 'محمد أحمد فؤاد | السيرة الذاتية' : 'Mohamed Ahmed Fouad | CV';
         }
 
-        // Start typing effect when page loads
-        window.addEventListener('load', () => {
-            setTimeout(typeEffect, 500);
-        });
-
-        // Restart typing effect when language changes
-        langToggle.addEventListener('click', () => {
-            // Reset typing states
-            indexAr = 0;
-            indexEn = 0;
-            isDeleting = false;
-            typedTextAr.textContent = '';
-            typedTextEn.textContent = '';
-            // Restart after a short delay
-            setTimeout(typeEffect, 500);
-        });
-
-        // ============================================================
-        // 9. AUTO-SCROLL INDICATOR (hide after first scroll)
-        // ============================================================
-        let scrollIndicatorHidden = false;
-        window.addEventListener('scroll', () => {
-            if (!scrollIndicatorHidden && window.scrollY > 100) {
-                const indicators = document.querySelectorAll('.scroll-indicator');
-                indicators.forEach(el => el.style.display = 'none');
-                scrollIndicatorHidden = true;
-            }
-        });
+        // 5. دالة الوضع المظلم (Dark Mode)
+        function toggleTheme() {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme');
+            const nextTheme = currentTheme === 'light' ? 'dark' : 'light';
+            html.setAttribute('data-theme', nextTheme);
+        }
     </script>
-
 </body>
 </html>
